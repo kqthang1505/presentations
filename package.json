@@ -1,0 +1,21 @@
+{
+  "name": "ocbc-barcelona",
+  "main": "./src",
+  "version": "0.0.0",
+  "author": {
+    "name": "*many*"
+  },
+  "description": "OCBC FNA Project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//ocbc-barcelona.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "load-grunt-tasks": "~0.4.0"
+  }
+}

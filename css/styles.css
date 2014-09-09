@@ -1,0 +1,94 @@
+* { box-sizing: border-box; }
+
+.container {
+	max-width: 768px;
+	margin: 0 auto;
+}
+.wrapper {
+    overflow: hidden
+}
+.relative {
+	position: relative;
+}
+
+img {
+	display: block;
+}
+
+.title {
+	text-align: center;
+}
+
+.caption {
+	display: block;
+	position: absolute;
+	font-size: 1em;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .7);
+	width: 100%;
+	line-height: 50px;
+	bottom: 0;
+	text-align: right;
+	padding: 0 20px;
+	opacity: 1;
+	-webkit-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;
+}
+
+.action {
+	text-align: right
+}
+.button {
+	line-height: 20px;
+	border-bottom: 1px dotted orange;
+	background: transparent;
+	color: orange;
+	display: inline-block;
+	margin-top: 20px;
+	text-align: right;
+	cursor: pointer;
+}
+.prev { margin-right: 20px }
+
+.button:hover {
+	border: none;
+}
+
+.filter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: #f00;
+	mix-blend-mode: normal;
+}
+
+/*.active {
+	opacity: 1;
+	visibility: visible;
+}*/
+
+.nextBlend {
+	left: 300px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.normal { mix-blend-mode: normal; }
+.multiply { mix-blend-mode: multiply; }
+.screen { mix-blend-mode: screen; }
+.overlay { mix-blend-mode: overlay; }
+.darken { mix-blend-mode: darken; }
+.lighten { mix-blend-mode: lighten; }
+.color-dodge { mix-blend-mode: color-dodge; }
+.color-burn { mix-blend-mode: color-burn; }
+.hard-light { mix-blend-mode: hard-light; }
+.soft-light { mix-blend-mode: soft-light; }
+.difference { mix-blend-mode: difference; }
+.exclusion { mix-blend-mode: exclusion; }
+.hue { mix-blend-mode: hue; }
+.saturation { mix-blend-mode: saturation; }
+.color { mix-blend-mode: color; }
+.luminosity { mix-blend-mode: luminosity; }
