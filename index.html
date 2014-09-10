@@ -6,41 +6,57 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Blend</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
+        <link type="text/css" rel="stylesheet" href="css/styles.css">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
-    	<h2 class="title">Blend example</h2>
-        <div class="container">
-    		<div class="wrapper relative">
-    			<img src="img/gorgeous_sunflowers-wide.jpg" width="768" alt="" />
-                <span class="caption">This is caption</span>
-                <div class="filter multiply" data-blend-mode="multiply"></div>
-    		</div>
+        <div id="wrapper">
+        	<h2 class="title">Mix Blend Mode example</h2>
             <div class="action">
-                <select class="blend-mode-value" name="blend-mode">
-                    <option value="normal">normal</option>
-                    <option value="multiply">multiply</option>
-                    <option value="screen">screen</option>
-                    <option value="overlay">overlay</option>
-                    <option value="darken">darken</option>
-                    <option value="lighten">lighten</option>
-                    <option value="color-dodge">color-dodge</option>
-                    <option value="color-burn">color-burn</option>
-                    <option value="hard-light">hard-light</option>
-                    <option value="soft-light">soft-light</option>
-                    <option value="difference">difference</option>
-                    <option value="exclusion">exclusion</option>
-                    <option value="hue">hue</option>
-                    <option value="saturation">saturation</option>
-                    <option value="color">color</option>
-                    <option value="luminosity">luminosity</option>
+                <select class="blend-mode-value select" name="blend-mode">
+                    <option value="normal">Normal</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="screen">Screen</option>
+                    <option value="overlay">Overlay</option>
+                    <option value="darken">Darken</option>
+                    <option value="lighten">Lighten</option>
+                    <option value="color-dodge">Color-dodge</option>
+                    <option value="color-burn">Color-burn</option>
+                    <option value="hard-light">Hard-light</option>
+                    <option value="soft-light">Soft-light</option>
+                    <option value="difference">Difference</option>
+                    <option value="exclusion">Exclusion</option>
+                    <option value="hue">Hue</option>
+                    <option value="saturation">Saturation</option>
+                    <option value="color">Color</option>
+                    <option value="luminosity">Luminosity</option>
                 </select>
             </div>
+            <div class="section">
+        		<div class="wrapper relative">
+        			<img src="img/gorgeous_sunflowers-wide.jpg" width="768" alt="" class="filter-img"/>
+                    <span class="caption">Normal</span>
+                    <div class="filter">&nbsp;</div>
+        		</div>
+                <div class="bottom-link">
+                    <a class="next" href="#background-blend-mode">Background blend mode demo</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="wrapper relative bg-blend-mode">
+                    <span class="caption">Normal</span>
+                </div>
+            </div>
+
+            <div class="section active-section">
+                <canvas id="canvas" class="canvas" width="768" height="480">Your browser does not suppport canvas</canvas>
+            </div>
         </div>
+
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
     </body>
