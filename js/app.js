@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	var $blend = $('.blend-img');
 	var $filter = $('.filter-img');
 	var $caption = $('.caption');
 	var $bg_blend_mode = $('.bg-blend-mode');
@@ -6,12 +7,13 @@ $(document).ready(function() {
 	// draw on canvas
 	drawCircle();
 
+	// change blend mode
 	$('#wrapper').on('change', '.blend-mode-value', function() {
 		var nextBlendMode = $(this).val();
 		var nextBlendModeText = $(this).find('option:selected').html();
 
 		// change mix blend mode
-		$filter.css('mix-blend-mode', nextBlendMode);
+		$blend.css('mix-blend-mode', nextBlendMode);
 		$bg_blend_mode.css('background-blend-mode', nextBlendMode + ', normal');
 
 		// change caption
@@ -21,7 +23,25 @@ $(document).ready(function() {
 		drawCircle(nextBlendMode);
 	});
 
+	// change blend mode
+	$('#wrapper').on('change', '.filter-value', function() {
+		var filter = $(this).val();
+		var filterText = $(this).find('option:selected').html();
 
+		// get filter method
+		$('.range-value').val(0);
+		setFilter(filter, 0);
+
+		// change caption
+		$caption.html(filterText);
+	});
+
+	$('#wrapper').on('input', '.range-value', function() {
+		var val = $(this).val();
+		val = parseInt(val);
+		var filter = $('.filter-value').val();
+		setFilter(filter, val);
+	});
 });
 
 function drawCircle(blendMode) {
@@ -54,4 +74,37 @@ function drawCircle(blendMode) {
 	context.rect(20, 20, cWidth - 40, cHeight - 40);
 	context.closePath();
 	context.fill();
+}
+
+function setFilter(filter, val) {
+	var fn = '';
+	switch (filter) {
+		case 'blur':
+			fn = filter + '(' + val + 'px)';
+			break;
+		case 'brightness':
+		case 'contrast':
+		case 'grayscale':
+		case 'invert':
+		case 'opacity':
+		case 'sepia':
+			fn = filter + '(' + val + '%)';
+			break;
+		case 'url':
+			break;
+		case 'drop-shadow':
+			fn = filter + '(10px 20px 10px green)';
+			break;
+		case 'hue-rotate':
+			fn = filter + '(' + val + 'deg)';
+			break;
+		default:
+			break;
+	}
+	// change mix blend mode
+	$('.filter-img').css({
+		'-webkit-filter': fn,
+		'-o-filter': fn,
+		'filter': fn
+	});
 }
