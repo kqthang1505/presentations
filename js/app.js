@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var $caption = $('.caption');
 	var $bg_blend_mode = $('.bg-blend-mode');
 
+	$('.main-nav .item').addClass('active');
 	// draw on canvas
 	drawCircle();
 
