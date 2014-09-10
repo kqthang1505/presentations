@@ -3,7 +3,12 @@
 .section {
 	max-width: 768px;
 	margin: 0 auto;
-	display: none;
+	/*display: none;*/
+	/*margin-top: 80px;*/
+	position: absolute;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
 }
 
 .invi {
@@ -149,6 +154,22 @@ img {
 	display: table;
 	height: auto;
 	width: 50%;
+}
+
+.action {
+	position: fixed;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.hide {
+	-webkit-transform:  translate(-1300px, 160px) scale(.2, .2) rotate(30deg);
+	-ms-transform:  translate(-1300px, 160px) scale(.2, .2) rotate(30deg);
+	-o-transform:  translate(-1300px, 160px) scale(.2, .2) rotate(30deg);
+	transform:  translate(-1300px, 160px) scale(.2, .2) rotate(30deg);
+	opacity: 0;
+	visibility: hidden;
 }
 
 @-webkit-keyframes show-menu {

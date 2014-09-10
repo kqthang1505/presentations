@@ -46,6 +46,27 @@ $(document).ready(function() {
 		var filter = $('.filter-value').val();
 		setFilter(filter, val);
 	});
+
+	//
+	$('.section').each(function() {
+		var x = $(this).attr('data-x');
+		var y = $(this).attr('data-y');
+
+		$(this).css({
+			'top': parseInt(y) + ($(window).height() - $(this).height()) / 2 + 'px',
+			'left': parseInt(x) + ($(window).width() - $(this).width()) / 2 +'px'
+		});
+	});
+
+	$('#wrapper').on('click', '.next', function() {
+		window.event.preventDefault();
+
+		$(this).closest('.section').addClass('hide');
+		// var val = $(this).val();
+		// val = parseInt(val);
+		// var filter = $('.filter-value').val();
+		// setFilter(filter, val);
+	});
 });
 
 function drawCircle(blendMode) {
