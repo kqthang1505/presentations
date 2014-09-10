@@ -7,6 +7,9 @@ $(document).ready(function() {
 	$('.main-nav .item').addClass('active');
 	// draw on canvas
 	drawCircle();
+	$('#wrapper').on('click', '.main-nav .item', function() {
+		$('.main-nav .item').removeClass('active');
+	});
 
 	// change blend mode
 	$('#wrapper').on('change', '.blend-mode-value', function() {
