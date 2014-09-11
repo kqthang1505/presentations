@@ -81,7 +81,7 @@ img {
 	text-decoration: none
 }
 .bottom-link a:hover {
-	border: none;
+	border-color: transparent;
 }
 
 .blend {
@@ -195,4 +195,115 @@ img {
 		top: 0;
 		opacity: 1
 	}
+}
+
+
+/* Presentation */
+body {
+	min-height: 768px;
+	height: 100%;
+}
+.absolute-center {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: table;
+	overflow: hidden;
+}
+
+.blend-mode-action {
+	text-align: left;
+	padding-bottom: 10px
+}
+
+.presentation {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
+}
+
+.presentation.step-1-present{
+	-webkit-transform: scale(10) translate(209px, -14px) translate3d(0, 0, 0);
+	-ms-transform: scale(10) translate(209px, -14px) translate3d(0, 0, 0);
+	-o-transform: scale(10) translate(209px, -14px) translate3d(0, 0, 0);
+	transform: scale(10) translate(209px, -14px) translate3d(0, 0, 0);
+}
+
+.presentation.step-2-present{
+	-webkit-transform: scale(10) translate(0) translate3d(0, 0, 0);
+	-ms-transform: scale(10) translate(0) translate3d(0, 0, 0);
+	-o-transform: scale(10) translate(0) translate3d(0, 0, 0);
+	transform: scale(10) translate(0) translate3d(0, 0, 0);
+}
+
+.presentation.step-3-present{
+	-webkit-transform: scale(10) translate(-209px, -14px) translate3d(0, 0, 0);
+	-ms-transform: scale(10) translate(-209px, -14px) translate3d(0, 0, 0);
+	-o-transform: scale(10) translate(-209px, -14px) translate3d(0, 0, 0);
+	transform: scale(10) translate(-209px, -14px) translate3d(0, 0, 0);
+}
+
+.presentation.active .step {
+	opacity: 1
+}
+
+.presentation.active .demo-title {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.demo-title {
+	font-size: 8em;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
+}
+
+.step-1 {
+	position: absolute;
+	top: 18%;
+	left: -4%;
+	transform: scale(0.1);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
+}
+
+.step-2 {
+	width: 768px;
+	height: 480px;
+	position: absolute;
+	top: 20%;
+	left: 16%;
+	transform: scale(0.1);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
+}
+
+.step-3 {
+	width: 768px;
+	height: 480px;
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	transform: scale(0.1);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
 }
