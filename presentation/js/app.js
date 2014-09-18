@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	// $('.main-nav .item').addClass('active');
 	// draw on canvas
-	drawCircle();
+	drawBlendTest();
 	// $('#wrapper').on('click', '.main-nav .item', function() {
 	// 	$('.main-nav .item').removeClass('active');
 	// });
@@ -107,6 +107,10 @@ function setFilter(filter, val) {
 		default:
 			break;
 	}
+	// add class to test on ie8
+	var $filterImg = $('.filter-img');
+	$filterImg.removeClass($filterImg.attr('data-filter'));
+	$filterImg.addClass(filter).attr('data-filter', filter);
 	// change mix blend mode
 	$('.filter-img').css({
 		'-webkit-filter': fn,
