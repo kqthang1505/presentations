@@ -12,9 +12,13 @@ $(document).ready(function() {
 	});
 
 	// change blend mode
-	$('#wrapper').on('change', '.blend-mode-value', function() {
+	$('.absolute-center').on('change', '.blend-mode-value', function() {
 		var nextBlendMode = $(this).val();
 		var nextBlendModeText = $(this).find('option:selected').html();
+
+		// blend img
+		var $blend = $(this).closest('section').find('.blend-img');
+		var $bg_blend_mode = $(this).closest('section').find('.bg-blend-mode');
 
 		// change mix blend mode
 		$blend.css('mix-blend-mode', nextBlendMode);
@@ -45,6 +49,32 @@ $(document).ready(function() {
 		val = parseInt(val);
 		var filter = $('.filter-value').val();
 		setFilter(filter, val);
+	});
+
+	//
+	$('.section').each(function() {
+		var x = $(this).attr('data-x');
+		var y = $(this).attr('data-y');
+
+		$(this).css({
+			'top': parseInt(y) + ($(window).height() - $(this).height()) / 2 + 'px',
+			'left': parseInt(x) + ($(window).width() - $(this).width()) / 2 +'px'
+		});
+	});
+
+	$('body').on('click', '.next', function() {
+		window.event.preventDefault();
+
+		$('.presentation').removeClass('step-1-present').addClass('step-2-present');
+		// $('.step-1').addClass('invi');
+		$('.step-2').removeClass('invi');
+	});
+
+	$('body').on('click', '.show-next', function() {
+		window.event.preventDefault();
+
+		$('.presentation').addClass('active').addClass('step-1-present');
+		// $('.presentation').find('.step-1');
 	});
 });
 
