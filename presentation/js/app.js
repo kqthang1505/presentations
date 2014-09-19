@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var $blend = $('.blend-img');
+	var $blend = $('.blend');
 	var $filter = $('.filter-img');
 	var $caption = $('.caption');
 	var $bg_blend_mode = $('.bg-blend-mode');
