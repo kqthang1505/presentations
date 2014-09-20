@@ -1,0 +1,244 @@
+* { box-sizing: border-box; }
+
+.section {
+	max-width: 768px;
+	margin: 0 auto;
+	/*display: none;*/
+}
+
+.invi {
+	display: none
+}
+
+.active-section {
+	display: block;
+}
+.wrapper {
+    /*overflow: hidden*/
+}
+.relative {
+	position: relative;
+}
+
+img {
+	display: block;
+}
+
+.blend-img {
+	-webkit-mix-blend-mode: normal;
+	-moz-mix-blend-mode: normal;
+	-ms-mix-blend-mode: normal;
+	-o-mix-blend-mode: normal;
+	mix-blend-mode: normal;
+}
+
+.select {
+	padding: 5px 10px;
+	font-size: .8em;
+}
+
+.title {
+	text-align: center;
+}
+
+.filter-wrapper .caption,
+.blend-wrapper .caption {
+	display: block;
+	position: absolute;
+	font-size: 1em;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .7);
+	width: 100%;
+	line-height: 50px;
+	bottom: 0;
+	text-align: right;
+	padding: 0 20px;
+	opacity: 1;
+	-webkit-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;
+}
+
+.action {
+	padding: 20px 0;
+	text-align: center
+}
+
+.prev { margin-right: 20px }
+
+.bottom-link {
+	text-align: right;
+	padding: 20px 0;
+}
+.bottom-link a{
+	color: rgba(9, 34, 161, 1);
+	border-bottom: 1px dotted;
+	display: inline-block;
+	text-decoration: none
+}
+.bottom-link a:hover {
+	border: none;
+}
+
+.blend {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(9, 34, 161, 1);
+	/*mix-blend-mode: normal;*/
+	/*z-index: -1;*/
+}
+
+.bg-blend-mode {
+	max-width: 768px;
+	height: 480px;
+	background: url(../img/gorgeous_sunflowers-wide.jpg), rgba(9, 34, 161, 1);
+	background-size: cover, 400px;
+	-webkit-background-blend-mode: normal, normal;
+	-moz-background-blend-mode: normal, normal;
+	-ms-background-blend-mode: normal, normal;
+	-o-background-blend-mode: normal, normal;
+	background-blend-mode: normal, normal;
+}
+
+.canvas {
+	box-shadow:  0 21px 26px -22px rgba(9, 34, 161, 1)
+}
+
+.main-nav {
+	list-style-type: none;
+	text-align: center;
+}
+
+.main-nav .item {
+	display: inline-block;
+	box-shadow: inset -4px -4px 10px rgba(0, 0, 0, .4), inset 4px 4px 10px rgba(0, 0, 0, .4);
+	min-width: 150px;
+	min-height: 150px;
+	position: relative;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	margin-right: 20px;
+	top: -50px;
+	opacity: 0;
+	cursor: pointer;
+	-webkit-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+.main-nav .item:hover {
+	border-color: rgba(0, 0, 0, .8);
+}
+
+.main-nav .item.active {
+	/*animation: showMenu 1s;*/
+	-webkit-animation: show-menu 2s;
+	opacity: 1;
+	top: 0
+}
+
+.main-nav .item .inner-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: table;
+	height: auto;
+	width: 50%;
+}
+
+@-webkit-keyframes show-menu {
+	0% {
+		top: -50px;
+		opacity: 0
+	}
+	70% {
+		top: 10px;
+	}
+	100% {
+		top: 0;
+		opacity: 1
+	}
+}
+
+@-moz-keyframes show-menu {
+	0% {
+		top: -50px;
+		opacity: 0
+	}
+	100% {
+		top: 0;
+		opacity: 1
+	}
+}
+
+.drop-shadow .box {
+	width: 200px;
+	height: 20px;
+	background: green;
+	color: green;
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+	margin-top: 100px;
+}
+.drop-shadow .box:after {
+	content: '';
+	width: 100px;
+	height: 100px;
+	border: 20px solid;
+	border-top: none;
+	border-left: none;
+	position: absolute;
+	top: -8px;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ms-transform-origin: left;
+	-o-transform-origin: left;
+	transform-origin: left;
+
+}
+
+.drop-shadow .box:before {
+	content: attr(data-text);
+	position: absolute;
+	bottom: -166px;
+	font-size: 30px;
+	width: 100%;
+	left: 0;
+}
+
+.drop-shadow .drop-shadow-box {
+	-webkit-filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, .8));
+	-o-filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, .8));
+	filter: drop-shadow(5px 5px 6px rgba(0, 0, 0, .8));
+}
+
+.drop-shadow .box-shadow-box {
+	box-shadow: -5px -5px 6px rgba(0, 0, 0, .8);
+}
+
+.drop-shadow .box-shadow-box:after {
+	box-shadow: -5px -5px 6px rgba(0, 0, 0, .8);
+}
+
+.opacity { filter: progid:DXImageTransform.Alpha(opacity=50); }
+.grayscale { filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); }
+.blur { filter: progid:DXImageTransform.Microsoft.blur(pixelradius=3); }
+/*filter: progid:DXImageTransform.Microsoft.MotionBlur(Strength=30,Direction=45)*/
+/*filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)*/
+/* Override */
+.demo .section { margin: 5px auto;}
+.demo img { max-width: 100%; max-height: 100% }
