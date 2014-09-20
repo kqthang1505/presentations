@@ -4,15 +4,12 @@ $(document).ready(function() {
 	var $caption = $('.caption');
 	var $bg_blend_mode = $('.bg-blend-mode');
 
-	// $('.main-nav .item').addClass('active');
 	// draw on canvas
 	drawBlendTest();
-	// $('#wrapper').on('click', '.main-nav .item', function() {
-	// 	$('.main-nav .item').removeClass('active');
-	// });
 
 	// change blend mode
 	$('#wrapper').on('change', '.blend-mode-value', function() {
+
 		var nextBlendMode = $(this).val();
 		var nextBlendModeText = $(this).find('option:selected').html();
 
@@ -29,7 +26,7 @@ $(document).ready(function() {
 		drawBlendTest(nextBlendMode);
 	});
 
-	// change blend mode
+	// change filter
 	$('#wrapper').on('change', '.filter-value', function() {
 		var filter = $(this).val();
 		var filterText = $(this).find('option:selected').html();
@@ -72,7 +69,7 @@ function drawBlendTest(blendMode) {
 	imageObj.onload = function() {
 		context.drawImage(imageObj, cWidth / 2 - 250, cHeight / 2 - 156, 500, 312);
 	};
-	imageObj.src = '../img/gorgeous_sunflowers-wide.jpg';
+	imageObj.src = 'img/gorgeous_sunflowers-wide.jpg';
 
 	// magenta
 	context.fillStyle = 'rgba(9, 34, 161, 1)';

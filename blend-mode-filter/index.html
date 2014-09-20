@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
+		<link rel="stylesheet" href="css/demo.css">
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 
 		<!-- For syntax highlighting -->
@@ -40,10 +42,10 @@
 
 	<body>
 
-		<div class="reveal">
+		<div class="reveal demo">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+			<div class="slides" id="wrapper">
 				<section data-transition="linear" data-background-transition="slide">
 					<h1>CSS3</h1>
 					<h3>Blend mode and Filter</h3>
@@ -132,6 +134,36 @@
 							<p class="fragment"><a href="localhost:8080/demo/#/background-blend-mode-demo"></a>Ví dụ</p>
 						</div>
 					</section>
+
+					<section id="background-blend-mode-demo">
+						<p>background-blend-mode</p>
+						<div class="action blend-action">
+						    <select class="blend-mode-value select" name="blend-mode">
+						        <option value="normal">Normal</option>
+						        <option value="multiply">Multiply</option>
+						        <option value="screen">Screen</option>
+						        <option value="overlay">Overlay</option>
+						        <option value="darken">Darken</option>
+						        <option value="lighten">Lighten</option>
+						        <option value="color-dodge">Color-dodge</option>
+						        <option value="color-burn">Color-burn</option>
+						        <option value="hard-light">Hard-light</option>
+						        <option value="soft-light">Soft-light</option>
+						        <option value="difference">Difference</option>
+						        <option value="exclusion">Exclusion</option>
+						        <option value="hue">Hue</option>
+						        <option value="saturation">Saturation</option>
+						        <option value="color">Color</option>
+						        <option value="luminosity">Luminosity</option>
+						    </select>
+						</div>
+						<div class="section bg-blend-mode">
+						    <div class="blend-wrapper relative bg-blend-mode">
+						        <span class="caption">Normal</span>
+						    </div>
+						</div>
+					</section>
+
 					<section>
 						<h2>mix-blend-mode</h2>
 						<ul id="fragments">
@@ -140,6 +172,38 @@
 							<li class="fragment">Ví dụ</li>
 						</ul>
 					</section>
+
+					<section id="mix-blend-mode-demo">
+						<p>mix-blend-mode</p>
+						<div class="action blend-action">
+						    <select class="blend-mode-value select" name="blend-mode">
+						        <option value="normal">Normal</option>
+						        <option value="multiply">Multiply</option>
+						        <option value="screen">Screen</option>
+						        <option value="overlay">Overlay</option>
+						        <option value="darken">Darken</option>
+						        <option value="lighten">Lighten</option>
+						        <option value="color-dodge">Color-dodge</option>
+						        <option value="color-burn">Color-burn</option>
+						        <option value="hard-light">Hard-light</option>
+						        <option value="soft-light">Soft-light</option>
+						        <option value="difference">Difference</option>
+						        <option value="exclusion">Exclusion</option>
+						        <option value="hue">Hue</option>
+						        <option value="saturation">Saturation</option>
+						        <option value="color">Color</option>
+						        <option value="luminosity">Luminosity</option>
+						    </select>
+						</div>
+					    <div class="section mix-blend-mode">
+							<div class="blend-wrapper relative">
+								<img src="img/gorgeous_sunflowers-wide.jpg" width="768" alt="" class="blend-img"/>
+					            <span class="caption">Normal</span>
+					            <div class="blend">&nbsp;</div>
+							</div>
+					    </div>
+					</section>
+
 				</section>
 				<section>
 					<section>
@@ -170,9 +234,34 @@
 							<a target="_blank" href="#canvas-blend-mode" class="fragment">Ví dụ:</a>
 						</div>
 					</section>
-					<section id="canvas-blend-mode">
-						<h2>Canvas blend</h2>
+
+					<section id="canvas-blend-mode-demo">
+						<p>Blend mode trên Canvas</p>
+						<div class="action blend-action">
+						    <select class="blend-mode-value select" name="blend-mode">
+						        <option value="normal">Normal</option>
+						        <option value="multiply">Multiply</option>
+						        <option value="screen">Screen</option>
+						        <option value="overlay">Overlay</option>
+						        <option value="darken">Darken</option>
+						        <option value="lighten">Lighten</option>
+						        <option value="color-dodge">Color-dodge</option>
+						        <option value="color-burn">Color-burn</option>
+						        <option value="hard-light">Hard-light</option>
+						        <option value="soft-light">Soft-light</option>
+						        <option value="difference">Difference</option>
+						        <option value="exclusion">Exclusion</option>
+						        <option value="hue">Hue</option>
+						        <option value="saturation">Saturation</option>
+						        <option value="color">Color</option>
+						        <option value="luminosity">Luminosity</option>
+						    </select>
+						</div>
+						<div class="section canvas-blend-mode">
+						    <canvas id="canvas" class="canvas" width="768" height="480">Your browser does not suppport canvas</canvas>
+						</div>
 					</section>
+
 					<aside class="notes">
 						Canvas 2D defines a 'globalCompositeOperation' that controls how drawing commands are composited with existing pixels.
 					</aside>
@@ -227,21 +316,61 @@
 					</aside>
 				</section>
 
-				<section class="text-left">
-					<h2>Filter properties</h2>
-					<!-- <pre> -->
-					<p class="fragment grow blue-text">filter: blur([pixels | percentage])</p>
-					<p class="fragment grow blue-text">filter: sepia([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: saturate([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: brightness([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: contrast([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: url()</p>
-					<p class="fragment grow blue-text">filter: drop-shadow(x y radius color)</p>
-					<p class="fragment grow blue-text">filter: grayscale([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: hue-rotate(angle)</p>
-					<p class="fragment grow blue-text">filter: invert([number | percentage])</p>
-					<p class="fragment grow blue-text">filter: opacity([number | percentage])</p>
-					<!-- </pre> -->
+				<section>
+					<section>
+						<h2>Filter properties</h2>
+						<!-- <pre> -->
+						<p class="fragment grow blue-text">filter: blur([pixels | percentage])</p>
+						<p class="fragment grow blue-text">filter: sepia([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: saturate([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: brightness([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: contrast([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: url()</p>
+						<p class="fragment grow blue-text">filter: drop-shadow(x y radius color)</p>
+						<p class="fragment grow blue-text">filter: grayscale([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: hue-rotate(angle)</p>
+						<p class="fragment grow blue-text">filter: invert([number | percentage])</p>
+						<p class="fragment grow blue-text">filter: opacity([number | percentage])</p>
+						<!-- </pre> -->
+					</section>
+
+					<!-- <section> -->
+					<section id="filter">
+						<p>Filter demo</p>
+						<div class="action filter-action">
+						    <select class="filter-value select" name="blend-mode">
+						        <option value="">Please select</option>
+						        <option value="blur">blur</option>
+						        <option value="brightness">brightness</option>
+						        <option value="contrast">contrast</option>
+						        <option value="url">url</option>
+						        <!-- <option value="drop-shadow">drop-shadow</option> -->
+						        <option value="grayscale">grayscale</option>
+						        <option value="hue-rotate">hue-rotate</option>
+						        <option value="invert">invert</option>
+						        <option value="opacity">opacity</option>
+						        <option value="sepia">sepia</option>
+						    </select>
+						    <br>
+						    <input type="range" class="range-value" />
+						</div>
+						<div class="section filter">
+						    <div class="filter-wrapper relative">
+						        <img src="img/gorgeous_sunflowers-wide.jpg" width="768" alt="" class="filter-img"/>
+						        <span class="caption">Filter</span>
+						    </div>
+						    <!-- <a href="http://codepen.io/thangkieu91/pen/aCAFj">Drop shadow example</a> -->
+						</div>
+					</section>
+
+					<section id="drop-shadow" class="drop-shadow">
+						<p>Drop-shadow example</p>
+						<div class="arrow-box">
+							<div class="box drop-shadow-box" data-text="drop-shadow"></div>
+							<div class="box box-shadow-box" data-text="box-shadow"></div>
+						</div>
+					</section>
+					<!-- </section> -->
 				</section>
 
 				<section>
@@ -277,6 +406,8 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+		<script src="lib/js/jquery-1.11.0.min.js"></script>
+		<script src="js/app.js"></script>
 
 		<script>
 
