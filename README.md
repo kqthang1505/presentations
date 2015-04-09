@@ -1,5 +1,4 @@
 author Thang Kieu
-@thankieu91
 
 =============
 
